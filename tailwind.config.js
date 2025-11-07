@@ -1,7 +1,6 @@
-/** @type {import('tailwindcss').Config} */
-module.exports = {
-  darkMode: "class", // <— 關鍵
+// tailwind.config.js  (ESM)
+export default {
   content: ["./index.html", "./src/**/*.{vue,js,ts,jsx,tsx}"],
   theme: { extend: {} },
-  plugins: [], // 需要表單樣式可加：require('@tailwindcss/forms')
+  plugins: [],
 };

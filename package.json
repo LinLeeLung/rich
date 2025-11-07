@@ -9,6 +9,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@dataconnect/generated": "file:src/dataconnect-generated",
     "firebase": "^12.5.0",
     "pinia": "^3.0.4",
     "vue": "^3.5.22",
