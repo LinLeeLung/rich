@@ -1,5 +1,14 @@
 {
   "projects": {
     "default": "rich-b48ce"
+  },
+  "targets": {
+    "rich-b48ce": {
+      "hosting": {
+        "web": [
+          "myrich"
+        ]
+      }
+    }
   }
 }

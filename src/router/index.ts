@@ -1,15 +1,20 @@
+// src/router/index.ts
 import { createRouter, createWebHistory } from "vue-router";
-import Home from "@/pages/Home.vue";
-import Dashboard from "@/pages/Dashboard.vue";
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
-    { path: "/", name: "home", component: Home },
+    { path: "/", name: "home", component: () => import("@/pages/Home.vue") },
+    {
+      path: "/login",
+      name: "login",
+      component: () => import("@/pages/Login.vue"),
+      meta: { guestOnly: true },
+    },
     {
       path: "/dashboard",
       name: "dashboard",
-      component: Dashboard,
+      component: () => import("@/pages/Dashboard.vue"),
       meta: { requiresAuth: true },
     },
   ],

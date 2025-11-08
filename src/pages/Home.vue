@@ -7,7 +7,7 @@
         <div
           class="inline-flex items-center gap-2 rounded-full bg-indigo-100/70 px-3 py-1 text-xs font-medium text-indigo-700 ring-1 ring-indigo-200 dark:bg-indigo-500/15 dark:text-indigo-300 dark:ring-indigo-500/20"
         >
-          新手也能懂的被動收入試算
+          新手也能懂的被動收入試算(每人都要會的理財)
         </div>
         <h1
           class="mt-4 text-4xl font-extrabold tracking-tight text-slate-900 dark:text-white"
@@ -98,9 +98,9 @@
             >
               <tr>
                 <th class="th">時間</th>
-                <th class="th text-right">累積資產</th>
-                <th class="th text-right">每月投資現金流</th>
-                <th class="th text-right">分身數</th>
+                <th class="th text-left">累積資產</th>
+                <th class="th text-left">每月投資現金流</th>
+                <th class="th text-left">分身數</th>
               </tr>
             </thead>
             <tbody>
@@ -110,13 +110,13 @@
                 class="odd:bg-white even:bg-slate-50/60 dark:odd:bg-white/5 dark:even:bg-white/0"
               >
                 <td class="td">{{ row.label }}</td>
-                <td class="td text-right font-medium">
+                <td class="td text-left font-medium">
                   {{ currency(row.asset) }}
                 </td>
-                <td class="td text-right">
+                <td class="td text-left">
                   {{ currency(row.asset * monthlyRate) }}
                 </td>
-                <td class="td text-right">
+                <td class="td text-left">
                   <span
                     :class="[
                       'px-2 py-1 rounded-full text-sm font-semibold',
@@ -149,7 +149,7 @@ import { ref, computed } from "vue";
 /** 使用者輸入 */
 const income = ref(60000);
 const saveRatePct = ref(30);
-const apyPct = ref(6);
+const apyPct = ref(9);
 
 /** 衍生值 */
 const monthlyContribution = computed(

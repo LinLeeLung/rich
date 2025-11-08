@@ -8,18 +8,18 @@
   </div>
 </template>
 
+<
 <script setup lang="ts">
-import { ref } from "vue";
+import { ref, onMounted } from "vue";
 import { onAuthStateChanged, signOut } from "firebase/auth";
-import { useRouter } from "vue-router";
 import { auth } from "@/services/firebase";
 
-const router = useRouter();
-const user = ref<any>(null);
+const user = ref<any>(auth.currentUser);
 
-onAuthStateChanged(auth, (u) => {
-  user.value = u;
-  if (!u) router.push("/"); // 未登入就回首頁
+onMounted(() => {
+  onAuthStateChanged(auth, (u) => {
+    user.value = u;
+  });
 });
 
 const logout = () => signOut(auth);
